@@ -1,0 +1,1005 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML 笔记</title>
+    <!-- css -->
+    <style type="text/css">
+        .news {
+            color: #ffffff;
+            background-color: #bb80ff;
+            padding: 0.1%;
+
+        }
+
+        #rd {
+            color: red;
+            font-weight: 900
+        }
+
+        .typ {
+            color: rgb(234, 0, 255);
+            font-weight: bold;
+
+        }
+
+        h3 {
+            text-align: center
+        }
+
+        h2 {
+            text-align: center;
+            color: blueviolet
+        }
+
+        p {
+            color: rgb(70, 70, 70);
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        pre {
+            font-size: larger;
+            font-weight: bold;
+            color: rgb(55, 55, 55);
+        }
+
+        header {
+
+            background-color: #9966ff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* 影藏列表第二位
+        nav ul ul:not(:first-child) {
+            display: none;
+        } */
+
+        nav ul {
+            font-weight: bold;
+            background-color: #ffffff;
+            height: 1em;
+
+            /* 定位方式 :相对窗口固定 */
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: auto;
+
+
+            /* 外边距 */
+            margin: 0;
+            /* 内边距列表前填充 
+            padding: 10px 20px 30px 40px; 
+            上右下左  */
+            padding: 0;
+            /* 行高 */
+            line-height: 0;
+
+            /* 列表标签样式 点方圆无 */
+            list-style: none;
+
+            /* 显示 布局*/
+            display: flex;
+
+            /* 水平对齐方式 :均分*/
+            justify-content: space-around;
+
+            /* 重直对齐方式 */
+            /* align-items: center; */
+
+
+        }
+
+        nav li {
+
+            background-color: #ffffff;
+
+            /*  定位方式 相对 */
+            position: relative;
+        }
+
+        nav ul ul {
+
+            /*  定位方式 绝对 */
+            position: absolute;
+
+            top: 100%;
+            left: 0;
+            /* 隐藏列表 
+            使用
+            nav li:hover>ul {
+            display:_bloc 显示*/
+            display: none;
+            z-index: 1;
+        }
+
+        /* 鼠标悬浮时显示 */
+        nav li:hover>ul {
+
+            display: block;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.5em;
+            text-decoration: none;
+            color: #9966ff;
+        }
+
+        nav ul ul li {
+            width: 200%;
+        }
+    </style>
+</head>
+<!--css使用 background-image 属性设置背景图片，
+    使用 background-size 属性设置图片的大小为 100% 宽度和 100% 高度，
+    使用 background-repeat 属性防止图片重复。 -->
+
+<body background="./test/bika.jpg" style="background-color:beige;background-size:100% auto;">
+
+    <!--基本元素-->
+
+    <header>
+        <h1>HTML 笔记</h1>
+        <hr>
+    </header>
+
+    <nav>
+        <!-- nav列表
+        《ul》
+        li
+        li -->
+        <!--y       -->
+        <!-- o       -->
+        <!-- ????? nav ul ul:not(:first-child)  {display: none;}  -->
+        <!-- 使用:not()伪类选择器来选择除了第一个子列表以外的所有子列表，然后将它们的显示设置为none。 -->
+
+        <ul id="n1">
+            <li><a href="#href">链接 </a>
+                <ul>
+                    <li><a href="#pic">图片</a></li>
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#textstyle"> 文本格式</a>
+            </li>
+
+
+            <li>
+                <a href="#style">样式</a>
+                <ul>
+                    <li><a href="#canvas">canvas</a> </li>
+                    <li><a href="#div">div</a> </li>
+                    <li> <a href="#frame">框架布局</a> </li>
+                    <li> <a href="#table">表格</a> </li>
+                    <li> <a href="#class">Class id</a> </li>
+                </ul>
+            </li>
+
+            <li>
+
+                <a href="#javascript">javascript</a>
+                <ul>
+                    <li><a href="#drag">拖拽</a></li>
+                    <li><a href="#storage">存储临时存储</a></li>
+
+                </ul>
+            </li> <a href="#list">表单</a>
+
+
+        </ul>
+
+
+
+
+
+    </nav>
+
+
+    </p>
+    <!--链接-->
+    <!--o         ./   代表目前所在的目录。-->
+    <!--o         ../  代表上一层目录。-->
+    <!--o         /    代表根目录。  /放前面回到根目录-->
+    <span id="href"></span><br />
+    <h3 style="text-align:center;font-size:24;
+        color:blueviolet">链接</h3>
+    <p style="text-align:center;">
+        绝对 URL - 指向另一个站点<span style="color:red">（比如 href="http://www.baide.com/index.htm"）</span>
+        <br />
+        相对 URL - 指向当前路径内的某个文件<span style="color:red">（href="目标文件或夹.htm"）</span>
+        <br />
+        锚 URL - 指向页面中的锚<span style="color:red">
+            定义猫 《a name="#top">~~~
+            a href="<a href="#rd">~~~#rd</a><br />
+
+            <br> ./ ----代表目前所在的目录<br>
+            ../ -----代表上一层目录。<br>
+            / ----------代表根目录。
+        </span>
+        <br />
+        <br />
+        重定向5s后刷新<br />
+        meta http-equiv="Refresh" content="5;url=http://" <br />
+        超链接 a href= <a href="https://www.baidu.com">baidu.com</a><br />
+        无下划线链接<span style="color: red;">style="text-decoration:none"</span> <a href="https://www.baidu.com"
+            style="text-decoration:none">
+            baidu.com！
+        </a>
+        <br />
+        <a href="test/test.zip" download="咩都无">下载 href download=""</a><br />
+
+        <br />
+        <!-- o 相对路径在  当前目录：（相对路径）-->
+        <b>相对路径</b><br />
+        本地文件 同目录直接
+        <!--  " "  -->
+        <a href="test/youknow.html"> "目标文件/夹路径"</a><br />
+
+        <!--   ./  -->
+        或者 ./ <a href="./test/youknow.html">(./表示当前路径 </a><br />末尾/表示是目录) <br />
+
+        <!--  /  -->
+        本地文件 加 / <a href="/html/test/youknow.html">协议feil:///访问C:/...??? </a><a href="/fromc.txt">
+            <br />https://访问/当前文件上一根目录？？？？ </a>
+        <br /><br />
+
+        <!-- o 绝对路径-->
+        <!--  file:///  -->
+        <b>绝对路径</b><br />
+        href= <a href="file:///C:/Users/78208/OneDrive/vscode/html/test/youknow.html">"file:///"</a>
+        <a href="file:///C:\Users\78208\OneDrive\vscode\html\test\youknow.html"><br />"file:///加 \ 路径"</a>
+        <br />
+        <a href="C:/Users/78208/OneDrive/vscode/html/test/youknow.html">
+            直接C:/Users/7820</a>
+        <br />
+        新窗口属性target="_blank"
+    </p>
+    <!-- 图片 -->
+
+    <p id="pic">
+        gif 和 jpg 文件均可用作 HTML 背景。background="img"<br /><b>图片 img src=<br /></b>
+
+        边框--border本地图片<br>
+        <img src="test/download.png" alt="baidu local" width="256" border=0 />
+    </p>
+    <!--usemap功能-->
+    <p>点击不同位置 usemap=#map name<br>矩形rect坐标+对角坐标/圆形circle坐标+半径<br />
+        <img src="https://ts1.cn.mm.bing.net/th/id/R-C.cc2388ce1d3f60c6feae0f0e36a4559a?rik=%2beNaKHn4aQqczA&riu=http%3a%2f%2fnwzimg.wezhan.cn%2fcontents%2fsitefiles2022%2f10112024%2fimages%2f3465554.jpg&ehk=izxPyBxnmL0EtF%2fWeFSkCcZ82LN8dq4E8lo1J0Locu8%3d&risl=&pid=ImgRaw&r=0"
+            alt=baidu width="256" height="256" border=2 solid=#888888 usemap="#map01" />
+    </p>
+    <map name="map01" id="map01">
+        <area shape="rect" coords="0,0,128,128" alt="arer01" href="https://www.baidu.com" />
+        <area shape="rect" coords="128,128,256,256" alt="arer02" href="https://www.bing.com" />
+        <area shape="rect" coords="0,128,128,256" alt="arer03" href="https://cn.aliyun.com" />
+    </map> <!--usemap功能-->
+    <!-- 图像对齐 -->
+    <p>
+
+    <p style="font-size: larger;color:rgb(255, 93, 93);font-weight: bold; ">
+        图像 <img src="test/ayy.gif" width="128" align="bottom"> 在文本下
+        图像 <img src="test/ayy.gif" width="128" align="middle"> 在文本中
+        图像 <img src="test/ayy.gif" width="128" align="top"> 在文本上<br />
+
+        align=bottom 对齐方式是默认的对齐方式。和middle /top/left/right</p>
+    <h3>多媒体</h3>
+    <p><b>图片插件音视频</b>
+        object data=""
+        <br />
+        embed src=""
+        <br />
+        <b>音频</b>
+        (audio controls)属性会显示一个音频播放器<br />
+        source src="" type=audio/mp3等等<br />
+        播放失败显示内容/使用object嵌套embed<br />
+        /audio
+        <br />
+        <b>视频</b><br />
+        video controls
+        source src="" type=video/mp4等等<br />
+        播放失败显示内容/使用object嵌套embed<br />
+
+        </video>
+
+    </p>
+
+
+
+    <hr />
+    <!--文本格式-->
+    <span id="textstyle"></span>
+    <br />
+    <h2 style=text-align:center;color:blueviolet id="文本格式">文本格式</h2>
+    <p style="text-align:center;">
+        <span style="color:blue">衔接或更添格式span</span> <br />
+        <b>加粗 b</b><br />
+        <strong>加粗强调 strong</strong><br />
+        <i>斜体 i</i><br />
+        <em>重要斜体 em</em><br />
+        <cite>著作标题 cite</cite><br />
+        <big>放大 big</big> 正常 <small>缩小</small><br />
+        <sub>sub下标</sub><sup>sup上标</sup><br />
+        del<del>删除线</del> 及 ins<ins>下划线</ins>
+        <br />
+        <abbr title="说明文本内容">缩写说明文abbr title</abbr><br />
+        引号引用 q<q>引用内容</q>
+        <br />
+        段落引用 格式不覆盖 自带缩进 blockquote
+    <blockquote style="text-align:center">喵喵喵 喵喵喵
+        喵喵
+    </blockquote>
+
+
+    </p>
+    <p style="color:red">字体颜色style="color:red"</p>
+    <p style="font-family:verdana;font-size:16px;background-color:rgb(255, 23 5, 54);">
+        style="font-family:<span style="color:blue">字体</span>;<br>
+        font-size:<span style="color:blue">字号;</span><br />
+        background-color:<span style="color:blue">背景颜色;</span>
+    </p>
+    <p id="rd"> css
+
+        缩进2字符 p {text-indent:1em;}
+
+    </p>
+    <pre>pre  非覆盖 保留格式文本:空格  
+                及换行</pre>
+    <!-- 显示代码文本 textarea -->
+    <p>显示代码文本 textarea<br />
+        <textarea name="code" cols="60" rows="3">
+   <textarea name="" id="" cols="60" rows="10">内容</textarea</textarea>
+    </p>
+    <address style="text-align:center">
+        非覆盖 邮件地址 address a href="mailto:<a href="mailto:782084435@qq.com">7820@qq.com</a>
+    </address>
+
+    <hr />
+    <!-- 样式 -->
+    <span id="style"></span><br />
+    <h2>样式</h2>
+    <p>
+        <big>在head预设内部样式</big><br>
+        <textarea cols="60" rows="7">
+    <head>
+    <style type="text/css">
+    body {background-color: beige;}
+    h2 {color: blueviolet;}
+    p {color: rgb(63, 63, 63);}
+    </style>
+    </head></textarea>
+
+        <br />
+        <br />
+        <a href="test/stylesheet.html">外部样式表.css文件</a><br />link rel定义一个外部链接<br />
+        <textarea rows="8" cols="60">
+    <head>    
+    <link rel="stylesheet" type="text/css" href="css/csstest1.css">
+    </head>
+    <body>
+        ......    
+    </body>
+    </textarea>
+    </p>
+    <br />
+    <p>内联样式style=""<br />
+        <br />
+        <!--div 分区布局 -->
+
+        <a id="div"><br /><br /></a>
+        <big><b>div分区</b></big>
+
+    <div class="news">
+        <h1>NEWS 狗粮价格爆涨</h1>
+        <p>。。。。。</p>
+
+        <h2>News 猫星人打下火星攻坚战</h2>
+        <p>。。。。。</p>
+
+        <h2>News 猫奴成为热门职业</h2>
+        <p><span class="typ">唯我猫猫 喵喵喵喵 ！</span>
+    </div>
+    </p>
+    <p><textarea rows="13" cols="60">
+<body>
+<div class="news">
+    <h1>NEWS 狗粮价格爆涨</h1>
+    <p>。。。。。</p>
+    <h2>News 猫星人打下火星攻坚战</h2>
+    <p>。。。。。</p>
+    <h2>News 猫奴成为热门职业</h2>
+    <p>唯我猫猫 喵喵喵喵 ！</p>
+</div>
+</body>    
+</textarea>
+        <br id="frame" />
+    </p>
+    <!-- 框架布局 -->
+    <h3>框架布局</h3>
+    <aside>
+        皮卡丘十万伏特!
+    </aside>
+    <p>
+        <span id="rd">header</span> 定义文档或节的页眉<br />
+
+        <b>section </b>定义文档中的内容<br />
+        <b> article </b>定义独立的自包含文章<br />
+        <b id="rd">aside</b> 定义内容之外的内容（比如侧栏）<br />
+        <b id="rd">footer</b> 定义文档或节的页脚<br />
+        <b>details</b> 定义额外的细节<br />
+        summary定义 details 元素的标题<br /><br />
+        <span id="rd">nav</span> 定义导航链接的容器<br />
+        直接a href<br />
+        定位方式:固定position: fixed;参数上下左右,<br />
+        ul列表布局<b id="rd">display: flex;</b><br />
+        ul对齐方式<b id="rd"> justify-content:</b><br />
+        <b id="rd"> justify-content:</b>属性设置 flex 容器中的项目
+        在主轴的对齐方式，包括以下可选值：<br />
+
+        flex-start: 项目靠近主轴起点对齐。<br />
+        flex-end: 项目靠近主轴终点对齐。<br />
+        center: 项目在主轴上居中对齐。<br />
+        space-between: 项目在主轴上平均分布，首尾分别靠近<br />
+        主轴起点和终点。<br />
+        space-around: 项目在主轴上平均分布，各个项目间距相<br />
+        等，距离容器的边界距离是间距的一半。<br />
+
+
+        <br /> <b id="rd"> farme</b><br />
+
+    </p>
+    <p><textarea rows="8" cols="60">
+    已淘汰建议css
+    <frameset cols="25%,75%">
+    <frame src="frame_a.htm">
+    <frame src="frame_b.htm">
+    </frameset>
+    </textarea></p>
+
+
+
+
+
+    <br id="table" /><br />
+
+    <!--  表格 -->
+    <h3>表格table tr行td列 居中style=margin: auto<br />
+    </h3>
+
+    <p><b id="rd">table border="2" cellpadding="6" cellspacing="6"</b><br />
+        <br /> rowspan colspan 占用行列数
+        <br>cellpadding 表格字符边距<br />
+        cellspacing 框线距离<br />
+        bgcolor 颜色 background背景图片<br />
+        align对齐/col align<br>
+        frame 框线位置
+    </p>
+
+    <!-- 表格本体 -->
+    <table style="color:rgb(255, 255, 255);
+        text-align:center;
+        margin: auto;
+        background-size:100% 100%;" border="2" cellpadding="20" cellspacing="10" bgcolor="white"
+        background="test/fubuky.gif">
+        <caption><big><b>标题 caption</b></big></caption>
+        <tr>
+            <th colspan="3"> 表头 th colspanx3</th>
+        </tr>
+        <tr>
+            <td><b>行tr</b></td>
+            <td><b>列td</b></td>
+            <td><b>。。</b></td>
+        </tr>
+    </table>
+
+
+    <!-- 列表 -->
+
+    <h3> 列表 ol start 有序/ul无序 dl自定义dtdd</h3>
+    <div style="text-align: center;">
+        <b>有序</b></p>
+        type可父级或li
+        <ol>
+            <li>001</li>
+            <li>002</li>
+            ... ...
+
+        </ol>
+        <ol start="09">
+            <li>start=09</li>
+            <li>010</li>
+
+            <li type="A">type=A</li>
+
+            <li type="I">type=I</li>
+        </ol>
+        <b>无序</b>
+        <ul>
+            <li type="square">type="square"</li>
+
+            <li type="circle">type="circle"</li>
+
+            <li type="disc">type="disc"</li>
+            <li type="none">type="none"</li>
+        </ul>
+        <b>《dl》 dt定义 dd描述</b><br />
+        《dl》 元素 描述列表 是一个包含术语定义以及描述的列表，通常用于展示词汇表或者元数据 (键 - 值对列表)。
+
+        <dl>
+            <dt style="color:red;">定义</dt>
+            <dd style="color:red;">.........................描述.........................</dd>
+
+            <dt>Coffee</dt>
+            <dd>Black hot drink</dd>
+            <dt>Milk</dt>
+            <dd>White cold drink</dd>
+        </dl>
+
+    </div>
+    <span id="canvas"></span><br /><br />
+
+    <div>
+        <!--    图形 -->
+        <h3>图形</h3>
+        <!-- 画布canvas -->
+        <p>
+            <b>画布canvas</b><br />
+            <!-- 矩形 -->
+
+            <canvas id="canvas01rec" width="128" height="128">浏览器不支持canvas
+            </canvas>
+
+            <!-- 线 -->
+            <canvas id="c02line" width="128" height="128" style="border:1px solid #bb80ff">浏览器不支持canvas</canvas>
+            <!-- 圆 -->
+            <canvas id="c02" width="128" height="128" style="border:1px solid #bb80ff ;">浏览器不支持canvas</canvas>
+            <!-- 渐变 -->
+            <canvas id="c03" width="128" height="128" style="border:1px solid #bb80ff">浏览器不支持canvas</canvas>
+
+            <!-- r js    const声明一个块级作用域的 常量。const声明的变量无法被重新赋值，而且必须在声明时进行初始化。 -->
+            <!-- r let 声明的 变量 是块级作用域，只在声明的块内有效，不会污染外部作用域，可用于循环语句和条件语句等局部作用域中。 -->
+            <!-- o var是旧标准    块级作用域是指在大括号 {} 内定义的变量或函数只在这个大括号内有效，在外部是无法访问的。例如，在一个函数内部定义的变量只在这个函数内部有效，外部无法访问-->
+            <script>
+                //  id获取canvas   
+                let c = document.getElementById("canvas01rec");
+                // 创建context对象
+                let cxt = c.getContext("2d");
+                // 填充 颜色
+                cxt.fillStyle = "#9966ff";
+                // 绘制矩形-------坐标 矩形的宽度 和高度。
+                cxt.fillRect(0, 0, 128, 128);
+
+
+
+                // 画线---------------------
+                let c1 = document.getElementById("c02line").getContext("2d");
+                //  起点--终点
+                c1.moveTo(32, 32);
+                c1.lineTo(64, 64);
+                c1.lineTo(32, 96);
+                // 背景(可选)
+                c1.fillStyle = "#ffffff";
+                c1.fillRect(0, 0, 128, 128);
+                // 描边
+                c1.lineWidth = 5
+                c1.stroke();
+
+
+                // 圆------------
+                let c2 = document.getElementById("c02").getContext("2d");
+                // 背景
+                c2.fillStyle = "#ffffff";
+                c2.fillRect(0, 0, 128, 128);
+                // 
+                c2.fillStyle = "#00f0ff";
+                // 绘制路径
+                c2.beginPath();
+                // 圆心 半径 ---起始角度 0  经过2 pi  逆时针
+                c2.arc(128, 128, 64, 0, Math.PI * 2, true);
+                c2.arc(0, 0, 32, 0, Math.PI * 2, true);
+                c2.closePath();
+                // 填充
+                c2.fill();
+
+
+                // 渐变------
+                let c3 = document.getElementById("c03").getContext("2d");
+
+                // 背景
+                c3.fillStyle = "#ffffff";
+                c3.fillRect(0, 0, 128, 128);
+                //    渐变 (创建线性梯度)
+                let clg = c3.createLinearGradient(0, 0, 128, 128);
+                //    0起点  1终点
+                clg.addColorStop(0, "#ff33ff");
+                clg.addColorStop(1, "#3333ff");
+                // 矩形 填充区域
+                c3.fillStyle = clg;
+                c3.fillRect(0, 32, 128, 64);
+
+            </script>
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <br id="class" /><br />
+    <!-- 类 id -->
+    <h3>
+        类class 、id <br /><br />
+        <span id="rd">同类名可以由多个 HTML 元素使用，而 id 名称只能由一个元素使用
+            <br />
+            #id -- .class召唤 /id传送(href=#）<br />js使用getElementById
+        </span><br />
+        HTML的ID、class和name属性可以使用中文，但并不推荐这样做。
+    </h3>
+    <p>id 属性用于给 HTML 元素定义一个唯一的标识符，id 在 JavaScript 中也用于获取该元素的引用，通过<span id="rd"> document.getElementById()
+        </span>方法可以获取一个元素的引用。<br />
+
+        name 属性则用于定义 HTML 表单元素的名称。在表单提交时，名称将被用于生成 HTTP 请求，后端可以通过该名称获取表单数据。<br />
+
+        class 属性则用于定义元素的类，一个元素可以同时有多个类。类可以用来为元素定义样式，也可以用于 JavaScript 中通过 <span id="rd">
+            document.getElementsByClassName()</span> 方法获取所有具有该类的元素。</p>
+    <!-- 内联框架iframe -->
+    <h3> iframe 内联框架在网页内显示网页</h3>
+
+    <p>frame name="iframe_01" frameborder="1" src="./HTML-notebook.html" width="50%"
+        height="200"<br />frameborder="0"去除边框<br />
+        <iframe name="iframe_01" frameborder="1" src="./HTML-notebook.html" width="50%" height="200">。。笔记。。</iframe>
+    </p>
+    <hr />
+    <!-- JavaScript -->
+    <span id="javascript"></span><br />
+    <h2>
+        javascript
+    </h2>
+    <p>XHTML 中，应该编码所有特殊的字符，或者把所有内容嵌套在 CDATA 部分</p>
+    <!-- 时间 -->
+    <h3>
+        内置js .innerhtml=date
+    </h3>
+    <p id="ti">
+        <script>document.getElementById('ti').innerHTML = Date();</script>
+    </p>
+    <!-- 按钮 -->
+    <h3>按钮bottom</h3>
+    <p>Js可以更改 HTML 元素的内容 innerhtml直接赋值</p>
+
+    <p> <button type="button" onclick="fn01()">o(￣▽￣)o</button>
+
+    <p id="01" style="font-weight: 900;">人类是有极限的所以</p>
+
+
+    <p>js更改样式</p>
+    <p><button onclick="fn02()"> ٩(●˙▿˙●)۶…⋆ฺ</button> </p>
+    <p id="02"><b>不能再点了牛牛要炸了~!</b></p>
+    <!-- js -->
+    <script>
+        function fn01() {
+
+            document.getElementById("01").innerHTML = "这一点可就回不去了~";
+        }
+        function fn02() {
+            document.getElementById("02").style.fontSize = "28px";
+        }
+    </script>
+    <p>
+        noscript 您的浏览器不支持 JavaScript!
+    </p>
+    <!-- 异步执行 async-->
+    <p>使用 async 属性加载脚本可能会导致一些问题,如果脚本之间有依赖关系，使用 defer 属性来确保它们以正确的顺序加载和执行。</p>
+    <p>如果设置 async：脚本与页面的其余部分异步执行（在页面解析时执行）<br />
+        defer：当页面完成解析时执行<br />
+        如果 async 或 defer 都无：在继续解析页面之前立即获取并执行脚本
+    </p>
+    <br id="drag">
+    <!--o 拖拽 -->
+    <h3>拖拽drag 放置drop</h3>
+    <!-- css -->
+    <style>
+        #dg03,
+        #dg01 {
+
+            border: 1px solid #aaaaaa;
+            width: 286px;
+            height: 150px;
+        }
+    </style>
+
+    <div text-a id="dg01" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <img id="dg02" src="./test/fubuky.gif" draggable="true" ondragstart="drag(event)" />
+    </div>
+    <div id="dg03" ondragover="allowDrop(event)" ondrop="drop(event)">?????
+    </div>
+    <!--o 拖拽 js -->
+    <script>
+
+        function drag(ev) {
+            // 拖拽 获取对象id存储在DataTransfer
+            // dataTransfer.setData() 方法设置被拖动数据的数据类型和值：
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        // 放置 (ev)接入事件 阻止默认行为  允许放置元素
+        function allowDrop(ev) {
+            //  ev.pre...阻止默认事件
+            ev.preventDefault();
+        }
+        // 放置 获取拖动元素id添加到容器
+        function drop(ev) {
+            // drop 事件的默认行为是以链接形式打开  阻止默认行为
+            ev.preventDefault();
+            let data = ev.dataTransfer.getData("text");
+            // ev.target 通常是鼠标拖放进入的目标元素，appendChild 方法通常被用于将被拖动的元素添加到拖放目标元素的子元素列表中。
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <!--o 存储setItem 取回getItem -->
+    <br id="storage" />
+    <br />
+    <h3>存取 localStorage</h3>
+    <p><b> 存储setItem 取回getItem 没有失效日期</b>
+        <br />localStorage.removeItem("lastname");删除
+    </p>
+
+    <!--o 存储js -->
+    <script>
+        // 检查浏览器storage支持 不等于!==
+        if (typeof (Storage) !== "undefined") {
+            // 存   键,值对字符串 或者localStorage.lastname=
+            localStorage.setItem("lastname", "meow?");
+            // 取
+            // innerHTML是DOM元素的属性，允许您获取 或 设置一个元素的HTML内容。
+            document.getElementById(Storage).innerHTML = localStorage.getItem("lastname");
+        } else {
+            // 报错
+            document.getElementById("storage").innerHTML = "不支持storage"
+        }
+
+    </script>
+    <!--o sessionStorage 临时存储 -->
+<p>sessionStorage</p>
+    <!--o 计数 -->
+    <br id="count" />
+    <br />
+    <p> <button id="myButton">计数简化id调用</button><br />
+        <br />
+    </p>
+    <div id="result1"></div>
+    <p> <button onclick="clickCount()" type="button">计数</button><br />
+        <br /><button onclick="clean()">清除</button>
+    </p>
+
+    <!-- 返回结果区域 -->
+
+    <div id="result"></div>
+
+    <!--o 计数js -->
+    <script>
+
+        // 变量简化计数 
+        let clickCount01 = 0;
+        // 事件监听器
+        document.getElementById("myButton").addEventListener("click", function () {
+            // 累加简写
+            clickCount01++;
+            document.getElementById("result1").innerHTML = "点击计数" + clickCount01 + "次";
+            // 输出到控制台
+            console.log(`你已经点击了 ${clickCount01} 次！`);
+        }
+        );
+
+        function clickCount() {
+            // 检查storage支持
+            if (typeof (Storage) !== "undefined") {
+                // 检查clickcount键值对是否存在
+                if (localStorage.clickCount) {
+                    // 计数点击累加 可简写++
+                    localStorage.clickCount = Number(localStorage.clickCount) + 1;
+                } else {
+                    // 初始化
+                    localStorage.clickCount = 1;
+                }
+                document.getElementById("result").innerHTML = "点击计数" + localStorage.clickCount + "次";
+            } else {
+                document.getElementById("result").innerHTML = "不支持storage";
+
+            }
+
+
+        };
+        function clean() {
+            // 变量归零不需要初始化let
+            clickCount01 = 0;
+            // 不能多参数  只能循环执行
+            ["clickCount", "clickCount01 ", "key3"].forEach(function (key) {
+                localStorage.removeItem(key);
+            });
+        }
+
+    </script>
+
+    <hr />
+
+    <!-- 表单 form-->
+    <a id="list"></a><br />
+
+    <h2>表单form<br />
+        form action="xxx.asp或.php" method=
+    </h2>
+    <p>
+
+        <b> input form="form的id"</b> 输入字段位于 HTML 表单之外（但仍属表单）：<br />
+        <b id="rd"> autocomplete</b> 属性表单会根据用户之前输入的值自动填写值。<br />
+        <b id="rd"> action</b> 属性指定表单处理程序 <br />
+        <b>input formaction 覆盖form的action</b><br />
+        如果省略 action 属性，则 action 会被设置为当前页面。<br />
+        <b id="rd"> method</b> 属性指定提交数据的 HTTP 方法。
+        取值有 <b id="rd">GET 和 POST。</b><br />
+
+        <b id="rd">GET </b>，表单数据会附加在 URL 的末尾，形成 http://example.com/?name1=value1&name2=value2 的形式。<br />
+        GET 少量数据查询和数据展示<br />
+        <b id="rd">POST </b>，表单数据会作为请求体发送，不会附加在 URL 上。<br />
+        POST 重要数据提交和修改
+        <br />
+    </p>
+    <!-- form样式 -->
+    <p>
+        给form的父元素添加布局样式display: flex; <br />
+        水平justify-content: center; <br />
+        垂直align-items: center;<br />
+        form就会水平和垂直居中。<br />
+        希望form元素与页面的左右两侧都有间距，可以给div元素添加一个max-width属性，
+        <br />
+        <b id="rd"> fieldset </b>标签用于将表单中相关的元素分组，使其在视觉上有一个边界
+        <b id="rd">legend </b>标签用于标识这个组的名称
+        <br /><br />
+        表单元素指的是不同类型的 input 元素、复选框、单选按钮、提交按钮等等。
+
+    </p>
+
+    <!--表单 input 文本和单选 下拉-->
+
+    <!--o input type= "text  /单选radio /多checkbox  /下拉select  /下拉输入datalist  /滑块range /tel/url/search/number/date/color/password/email/" -->
+    <h3>input输入元素</h3>
+
+
+    <!-- 自动填写 autocomplete -->
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp" autocomplete="on">
+        <!-- 区域 -->
+        <fieldset>
+            <!-- 表单名 -->
+            <legend>信息</legend>
+            <!-- 文本 -->
+            <p>
+                <b> 文本输入<br />input type="text" name= ""value=</b>
+                <!--r input pattern 是一个用于限制用户输入内容的 HTML5 属性，它接受一个正则表达式作为其值。只有符合正则表达式的内容才能被输入。 pattern 值包括：
+                [0-9]+：只允许输入数字。
+                [a-zA-Z]+：只允许输入字母。
+                [a-zA-Z0-9]+：只允许输入字母和数字。
+                ^1[3-9]\d{9}$：只允许输入中国大陆的手机号码。
+                {重复次数}
+                \d{4}-\d{1,2}-\d{1,2}：只允许输入日期，格式为 YYYY-MM-DD。 -->
+
+                <!--y   for 属性的值关联表单的 id 值将lable与表单相关联。 也可直接套嵌在lable -->
+                <br /> <label for="名"> 名:</label>
+                <input type="text" id="名" name="firstname">
+                <br />
+                <label for="姓">姓:</label>
+                <input type="text" id="姓" name="lastname"><br />
+                <b id="rd"> input type="password" name="password" required设置为必填</b><br />
+                <!-- password -->
+                <!--o 自动聚焦autofocus  -->
+                <!-- r required为必填 -->
+                <label for="user">账号: </label>
+                <input type="text" id="user" name="user" autofocus required /><br />
+
+                <label for="pswd">密码: </label><input id="pswd" type="password" name="password" required />
+
+                <!-- 单选radio /多选-->
+                <br /><br />
+                <b>单选按钮 input type="radio name="" value=</b>
+                <br />
+                <!-- lable直接使用 -->
+                <label><input type="radio" name="sex" value="male" checked />男</label>
+                <label> <input type="radio" name="sex" value="female" />女</label>
+                <label> <input type="radio" name="sex" value="mix" />你猜</label>
+                <br />
+                <!-- 多选 checkbox-->
+                <b>多选按钮 input type="checkbox" name="" value="
+
+                </b><br />
+                <label><input type="checkbox" name="hoppy" value="male" />满头大汉 </label><br />
+                <label><input type="checkbox" name="hoppy" value="female" />橘味香气 </label> <br />
+                <label><input type="checkbox" name="hoppy" value="females" />多人联姬</label> <br />
+
+
+                <br />
+                <!-- o 下拉清单为option -->
+                <!-- 下拉 select-->
+                <b>单选下拉 <br />select name=" 《option value=</b> <br />
+                <select name="选择">
+                    <option value="小孩子才做选择">青少年版</option>
+                    <option value="大人选择全都要">登大郎</option>
+                    <option value="进入坦克">进入坦克</option>
+                </select><br />
+                <!-- 下拉输入     
+                       list调用 datalist-->
+                </b><br />
+                <label for="rank1"><b>单选下拉输入框<br />input list=下id id=《datalist id=《option</label><br />
+                <!--y list 关联列表id值-->
+                <input list="dl1" name="rank" id="rank1" />
+                <datalist id="dl1">
+                    <option value="马猴烧酒">马猴烧酒</option>
+                    <option value="马酒">马酒</option>
+                    <option value="米可">米可</option>
+                </datalist>
+                <br />
+                <!-- 数字框 -->
+                <label>数字
+                    <br>input type="number" name="" min="" max="" step="2" value="8"
+                    <br />
+                    <input type="number" name="age" min="6" max="38" step="2" value="8" />
+                    <!-- 日期 -->
+                </label>
+                <br /><br />
+                input type="date" name="" max="y-m-d"<br>
+                <input type="date" name="bday" max="2023-12-31"><br /><br />
+                <!-- 滑块range -->
+                滑块<br />type="range" name="" min="0" max="20"
+                <br />
+                <input type="range" name="range1" min="0" max="20" /><br />
+                <!-- 上传文件file multiple可选复数文件 -->
+                选择文件：input type=file name= multiple复数文件
+                <br /><input type="file" name="img" multiple="multiple" /><br /><br />
+
+                <!--r 各种按钮 input表单提交 button执行脚本-->
+                <b>input type="submit"</b>
+                <br />
+                定义用于向表单处理程序（form-handler）提交表单的按钮。
+                <br />
+                <input type="submit" value="提交"> &nbsp;
+                <button type="button" onclick="alert('这里面水很深 你可得想明白了!')">警告</button>
+                <br /><br />
+                <!-- 搜索 -->
+
+                <label for="searchBox">input type="search" id="" name="" placeholder="给我搜"<br /></label>
+                <!--r placeholder占位预设词 -->
+                <input type="search" id="searchBox" name="search" placeholder="给我搜">
+                <button type="submit">Submit</button>
+
+            </p>
+
+        </fieldset>
+    </form>
+    <div>
+        <h3> </h3>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+body
+{background-color:rgb(30,30,30);
+border:1pt solid rgb(64,64,64);}
+h1
+{color:rgb(200, 70, 50);
+background-color:rgb(48,48,52);   
+border:1pt solid rgb(64,64,64);}
+
+p
+{color:rgb(128,128,128);
+background-color:rgb(48,48,52);
+border: 1pt solid rgb(64,64,64);}
+span
+{color:rgb(200,200,200);}

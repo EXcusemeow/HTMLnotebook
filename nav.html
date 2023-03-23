@@ -1,0 +1,80 @@
+<style>
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        position: relative;
+    }
+
+    nav ul ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        z-index: 1;
+    }
+
+    nav li:hover>ul {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        padding: 1px;
+        text-decoration: none;
+        
+    }
+
+    nav ul ul li {
+        width: 200px;
+    }
+</style>
+
+
+<nav>
+    <ul>
+        <li>
+            <a href="#">菜单1</a>
+            <ul>
+                <li><a href="#">子菜单1</a></li>
+                <li><a href="#">子菜单2</a></li>
+                <li><a href="#">子菜单3</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</nav>
+弹出式下拉菜单导航通常指的是鼠标悬停在菜单项上时弹出下拉子菜单，而不是通过点击菜单项来控制下拉子菜单的显示和隐藏。
+
+下面是一个简单的弹出式下拉菜单导航的示例代码：
+
+html
+Copy code
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">Products</a>
+            <ul>
+                <li><a href="#">Product 1</a></li>
+                <li><a href="#">Product 2</a></li>
+                <li><a href="#">Product 3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Services</a>
+            <ul>
+                <li><a href="#">Service 1</a></li>
+                <li><a href="#">Service 2</a></li>
+                <li><a href="#">Service 3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
